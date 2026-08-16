@@ -1,0 +1,17 @@
+import { Meta, Typeset } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Typography" />
+
+# Typographic Hierarchy
+
+Monospace is the primary UI language (headings, inputs, buttons, badges, metadata).
+Sans-serif is reserved for multi-line body copy and modal descriptions.
+
+export const typeSpecimens = {
+  fontFamilies: ['ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'],
+  fontSizes: ['9px', '10px', '0.75rem', '0.875rem', '1.25rem', '1.5rem'],
+  fontWeight: 900,
+  sampleText: 'DISPLAY HEADER // SECTION HEADING',
+};
+
+<Typeset {...typeSpecimens} />
