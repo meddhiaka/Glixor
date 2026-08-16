@@ -25,7 +25,6 @@ const meta = {
     size: 'md',
     glitch: true,
     required: false,
-    fullWidth: false,
   },
 } satisfies Meta<typeof Input>
 
