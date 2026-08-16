@@ -1,14 +1,13 @@
 <div align="center">
 
-<!-- TODO: replace with the project logo -->
-<img src="./docs/logo.png" alt="Glixor logo" width="120" />
+<img alt="5efe7a4c-4118-4963-b560-8f59bf0d2200" src="https://github.com/user-attachments/assets/3885ac77-70b7-4baf-b749-83fe3bb486de" alt="Glixor logo" width="120"/>
 
 # Glixor
 
 A neo-brutalist, glitch-driven UI component library and design system — built with React, TypeScript, and Storybook.
 
-<!-- TODO: replace with a project banner / Storybook screenshot -->
-<img src="./docs/banner.png" alt="Glixor preview" width="100%" />
+<img alt="a1a40ab8-3435-441d-9ce6-0dbbee0f35e1" src="https://github.com/user-attachments/assets/b649440d-3345-4952-8265-2594eec3dcb4" alt="Glixor preview" width="100%" />
+
 
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
