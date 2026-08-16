@@ -130,3 +130,101 @@
 .dark .text-glitch-static {
   text-shadow: -1.2px 0 0 rgba(0, 240, 255, 0.9), 1.2px 0 0 rgba(255, 0, 127, 0.9);
 }
+
+.cyber-fx {
+  position: relative;
+  display: inline-flex;
+}
+
+.cyber-fx .cyber-bar-top,
+.cyber-fx .cyber-bar-bottom {
+  position: absolute;
+  height: 3px;
+  width: 40%;
+  z-index: 5;
+  pointer-events: none;
+}
+.cyber-fx .cyber-bar-top {
+  top: -2px;
+  right: 10%;
+  background: #00f0ff;
+  transform-origin: right center;
+}
+.cyber-fx .cyber-bar-bottom {
+  bottom: -2px;
+  left: 10%;
+  background: #ff007f;
+  transform-origin: left center;
+}
+.cyber-fx:hover .cyber-bar-top,
+.cyber-fx:focus-within .cyber-bar-top {
+  animation: glitchStretch 0.4s ease-out;
+}
+.cyber-fx:hover .cyber-bar-bottom,
+.cyber-fx:focus-within .cyber-bar-bottom {
+  animation: glitchStretch 0.4s ease-out 0.05s;
+}
+
+.cyber-fx .cyber-pip-left,
+.cyber-fx .cyber-pip-right {
+  position: absolute;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.cyber-fx .cyber-pip-left {
+  left: -4px;
+  background: #ff007f;
+  transform: translate(-2px, -50%);
+}
+.cyber-fx .cyber-pip-right {
+  right: -4px;
+  background: #00f0ff;
+  transform: translate(2px, -50%);
+}
+.cyber-fx:hover .cyber-pip-left,
+.cyber-fx:focus-within .cyber-pip-left,
+.cyber-fx:hover .cyber-pip-right,
+.cyber-fx:focus-within .cyber-pip-right {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+.cyber-fx .chromatic-cyan,
+.cyber-fx .chromatic-magenta {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s;
+}
+.cyber-fx .chromatic-cyan { background: #00f0ff; }
+.cyber-fx .chromatic-magenta { background: #ff007f; }
+
+.cyber-fx:hover .chromatic-cyan,
+.cyber-fx:focus-within .chromatic-cyan,
+.cyber-fx:active .chromatic-cyan {
+  opacity: 0.5;
+  animation: glitchJitter 0.25s infinite linear;
+}
+.cyber-fx:hover .chromatic-magenta,
+.cyber-fx:focus-within .chromatic-magenta,
+.cyber-fx:active .chromatic-magenta {
+  opacity: 0.5;
+  animation: glitchJitter 0.25s infinite linear reverse;
+}
+
+.cyber-fx[data-disabled='true']:hover .cyber-bar-top,
+.cyber-fx[data-disabled='true']:hover .cyber-bar-bottom,
+.cyber-fx[data-disabled='true']:hover .cyber-pip-left,
+.cyber-fx[data-disabled='true']:hover .cyber-pip-right,
+.cyber-fx[data-disabled='true']:hover .chromatic-cyan,
+.cyber-fx[data-disabled='true']:hover .chromatic-magenta {
+  animation: none;
+  opacity: 0;
+}
