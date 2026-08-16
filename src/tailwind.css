@@ -239,6 +239,20 @@
   animation: glitchJitter 0.25s infinite linear;
 }
 
+.cyber-fx[data-active='true'] .cyber-bar-top,
+.cyber-fx[data-active='true'] .cyber-bar-bottom {
+  animation: glitchStretch 1.4s infinite ease-in-out;
+}
+.cyber-fx[data-active='true'] .cyber-pip-left,
+.cyber-fx[data-active='true'] .cyber-pip-right {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+.cyber-fx[data-active='true'] .chromatic-cyan,
+.cyber-fx[data-active='true'] .chromatic-magenta {
+  opacity: 0.5;
+}
+
 .animate-screen-tear {
   animation: screenTear 0.3s infinite linear;
 }
