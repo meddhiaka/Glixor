@@ -1,6 +1,7 @@
 import { forwardRef } from 'react'
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import { CyberFx } from '../CyberFx'
+import { Spinner } from '../Spinner'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'alert'
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
@@ -54,24 +55,6 @@ const CHAMFER_CLASSES: Record<ButtonChamfer, string> = {
   chamfer: 'clip-chamfer',
   'chamfer-tl-br': 'clip-chamfer-tl-br',
   tag: 'clip-tag pr-3',
-}
-
-function Spinner({ className = '' }: { className?: string }) {
-  return (
-    <svg
-      className={`h-3.5 w-3.5 animate-spin ${className}`}
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-      <path
-        className="opacity-75"
-        fill="currentColor"
-        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-      />
-    </svg>
-  )
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
