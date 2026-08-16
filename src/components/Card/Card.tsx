@@ -71,7 +71,7 @@ export function Card({
 
   if (!glitch) return box
 
-  return <CyberFx className="flex w-full">{box}</CyberFx>
+  return <CyberFx className={`flex w-full ${className}`}>{box}</CyberFx>
 }
 
 export type CardMediaSize = 'sm' | 'md' | 'lg'
