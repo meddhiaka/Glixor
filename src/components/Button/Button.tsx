@@ -129,5 +129,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
 
   if (!glitch) return content
 
-  return <CyberFx disabled={isDisabled}>{content}</CyberFx>
+  return (
+    <CyberFx disabled={isDisabled} className={fullWidth ? 'flex w-full' : undefined}>
+      {content}
+    </CyberFx>
+  )
 })
