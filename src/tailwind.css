@@ -228,3 +228,13 @@
   animation: none;
   opacity: 0;
 }
+
+/* Alert tone — persistent, not hover-gated, for components stuck in an error state */
+.cyber-fx[data-tone='alert'] .cyber-bar-top,
+.cyber-fx[data-tone='alert'] .cyber-pip-left {
+  background: #ff003c;
+}
+.cyber-fx[data-tone='alert'] .chromatic-cyan {
+  opacity: 0.4;
+  animation: glitchJitter 0.25s infinite linear;
+}
