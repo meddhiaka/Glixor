@@ -58,6 +58,11 @@ Glixor is a component library built around a distinctive "cyber HUD" aesthetic �
 | Sliders | Media carousels and range tuning | 🚧 | — |
 | Form controls | Textarea, dropdown, checkbox, switch | 🚧 | — |
 
+## Roadmap
+
+- 📖 A standalone documentation site (separate from Storybook) is planned for the future
+- 📦 Glixor will be published as an npm package once the component set stabilizes
+
 ## Getting started
 
 ```bash
