@@ -1,5 +1,6 @@
 import { forwardRef } from 'react'
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import { CyberFx } from '../CyberFx'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'alert'
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
@@ -128,15 +129,5 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
 
   if (!glitch) return content
 
-  return (
-    <span className="cyber-fx group" data-disabled={isDisabled}>
-      <span className="cyber-bar-top" aria-hidden="true" />
-      <span className="cyber-bar-bottom" aria-hidden="true" />
-      <span className="cyber-pip-left" aria-hidden="true" />
-      <span className="cyber-pip-right" aria-hidden="true" />
-      <span className="chromatic-cyan" aria-hidden="true" />
-      <span className="chromatic-magenta" aria-hidden="true" />
-      {content}
-    </span>
-  )
+  return <CyberFx disabled={isDisabled}>{content}</CyberFx>
 })
