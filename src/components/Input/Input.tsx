@@ -21,7 +21,6 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   leftIcon?: ReactNode
   /** Trailing slot — a `<kbd>` shortcut badge, an icon, anything. */
   rightAdornment?: ReactNode
-  fullWidth?: boolean
   /** Renders just the bare `<input>` with no border/box of its own, for composing into a shared container — see the segmented-input story. */
   bare?: boolean
   containerClassName?: string
@@ -52,7 +51,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     glitch = true,
     leftIcon,
     rightAdornment,
-    fullWidth = false,
     bare = false,
     className = '',
     containerClassName = '',
@@ -74,11 +72,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   }
 
   const boxClasses = [
-    'group relative z-10 flex items-center transition-colors',
+    'group relative z-10 flex w-full items-center transition-colors',
     error
       ? 'border-2 border-brand-alert bg-red-500/10 shadow-[0_0_10px_rgba(255,0,60,0.2)]'
       : `${LOOK_CLASSES[look]} focus-within:border-brand-primary`,
-    fullWidth ? 'w-full' : '',
   ]
     .filter(Boolean)
     .join(' ')
@@ -96,7 +93,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   )
 
   return (
-    <div className={[fullWidth ? 'w-full' : 'inline-block', containerClassName].filter(Boolean).join(' ')}>
+    <div className={containerClassName}>
       {label && (
         <label
           htmlFor={id}
@@ -107,7 +104,13 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         </label>
       )}
 
-      {glitch ? <CyberFx tone={error ? 'alert' : 'default'}>{box}</CyberFx> : box}
+      {glitch ? (
+        <CyberFx tone={error ? 'alert' : 'default'} className="flex w-full">
+          {box}
+        </CyberFx>
+      ) : (
+        box
+      )}
 
       {error ? (
         <p className="mt-1.5 flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-brand-alert">
