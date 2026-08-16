@@ -299,3 +299,81 @@
 .animate-backdrop-enter {
   animation: backdropFlicker 0.4s ease-out forwards;
 }
+
+@keyframes scanlineSweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes stripeMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 20px; }
+}
+
+@keyframes hazardFlicker {
+  0%, 80%, 100% { opacity: 0.7; }
+  85% { opacity: 0.15; transform: skewX(6deg); }
+  90% { opacity: 1; transform: skewX(-4deg); }
+  95% { opacity: 0.25; transform: skewX(0); }
+}
+
+.skel-block {
+  position: relative;
+  overflow: hidden;
+  background-color: #e2e8f0;
+}
+.dark .skel-block {
+  background-color: #1e293b;
+}
+
+.skel-laser::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.45), transparent);
+  animation: scanlineSweep 1.5s infinite linear;
+}
+
+.skel-bitmap {
+  background-image: radial-gradient(rgba(0, 240, 255, 0.25) 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+.skel-bitmap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: bitmapDecode 1.2s infinite steps(10);
+}
+.dark .skel-bitmap::after {
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.3), transparent);
+}
+
+.skel-stripes {
+  background-size: 20px 20px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 0, 127, 0.06),
+    rgba(255, 0, 127, 0.06) 10px,
+    rgba(0, 240, 255, 0.06) 10px,
+    rgba(0, 240, 255, 0.06) 20px
+  );
+  animation: stripeMove 1s infinite linear;
+}
+.dark .skel-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 0, 127, 0.15),
+    rgba(255, 0, 127, 0.15) 10px,
+    rgba(0, 240, 255, 0.15) 10px,
+    rgba(0, 240, 255, 0.15) 20px
+  );
+}
+
+.skel-hazard {
+  background-color: rgba(255, 0, 60, 0.12);
+  animation: hazardFlicker 2.5s infinite linear;
+}
+.dark .skel-hazard {
+  background-color: rgba(255, 0, 60, 0.22);
+}
